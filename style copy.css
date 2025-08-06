@@ -1,0 +1,71 @@
+/* Asegura que la tabla quede centrada horizontalmente */
+table {
+    margin: 0 auto;
+    width: 90%; /* o un ancho fijo como 400px, según tu preferencia */
+    max-width: 500px; /* para que no se extienda demasiado */
+    border-collapse: collapse;
+  }
+  
+  /* Contenedor principal mantiene su estilo */
+  .container {
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    max-width: 550px; /* asegura margen del container */
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Ajustes visuales ya existentes */
+  th {
+    background-color: #ffe9e9;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  td:nth-child(2) {
+    background-color: #fff6dc;
+  }
+  
+  input[type="checkbox"].check {
+    width: 20px;
+    height: 20px;
+    accent-color: #b57e00;
+  }
+  
+  /* Estilos de cabecera con los botones */
+  .cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .cabecera button {
+    margin-left: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #editarBtn {
+    background-color: #3498db;
+    color: white;
+  }
+  #salvarBtn {
+    background-color: #27ae60;
+    color: white;
+  }
+  #salvarBtn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  

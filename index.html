@@ -1,53 +1,43 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Formulario de Asistencia</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Asistencia</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <div class="cabecera">
-      <h2>Asistente Perez Lazo</h2>
-      <div class="botones">
-        <button id="editarBtn" onclick="habilitarEdicion()">Editar</button>
-        <button id="salvarBtn" onclick="guardarCambios()" disabled>Salvar</button>
-      </div>
+    <h2>Bienvenido:</h2>
+
+    <div class="fecha-section">
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" />
     </div>
 
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" name="fecha" class="fecha" value="2025-07-28">
+    <div class="doctor-section">
+      <label for="doctor">Selecciona un doctor:</label>
+      <select id="doctor">
+        <option value="">-- Selecciona --</option>
+      </select>
+    </div>
 
-    <table>
-      <tr>
-        <th>Doctores:</th>
-        <th>Asistencia a:</th>
-      </tr>
-      <tr><td>Cesar Martinez</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Josue Romero</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Samael Romero</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Desiree Gonzalez</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Yaima Gonzalez</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Gianna Conde</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Ingrid Simon</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Niurvys Gomez</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Mario Hernandez</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Carlos Castillo Placencias</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Erick Iglesias Ruiz</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Manuel Rodriguez</td><td><input type="checkbox" class="check"></td></tr>
-      <tr><td>Andrea Bastos</td><td><input type="checkbox" class="check"></td></tr>
-    </table>
+    <div class="procedimientos-section" id="procedimientos-container">
+      <h3>Procedimientos</h3>
+      <div id="procedimientos"></div>
+    </div>
 
-    <table>
-      <tr>
-        <th>Áreas de apoyo:</th>
-        <th></th>
-      </tr>
-      <tr>
-        <td>Laboratorio</td>
-        <td><input type="checkbox" class="check"></td>
-      </tr>
-    </table>
+    <div class="botones">
+      <button id="editar">Editar</button>
+      <button id="salvar" disabled>Salvar</button>
+      <button id="enviar">Enviar</button>
+    </div>
+
+    <div id="resumen-container">
+      <h3>Resumen de selección:</h3>
+      <div id="resumen"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>

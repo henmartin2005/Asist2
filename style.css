@@ -1,71 +1,120 @@
-/* Asegura que la tabla quede centrada horizontalmente */
-table {
-    margin: 0 auto;
-    width: 90%; /* o un ancho fijo como 400px, según tu preferencia */
-    max-width: 500px; /* para que no se extienda demasiado */
-    border-collapse: collapse;
-  }
-  
-  /* Contenedor principal mantiene su estilo */
-  .container {
-    background-color: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    max-width: 550px; /* asegura margen del container */
-    margin: auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Ajustes visuales ya existentes */
-  th {
-    background-color: #ffe9e9;
-    color: #333;
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #ccc;
-  }
-  
-  td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  td:nth-child(2) {
-    background-color: #fff6dc;
-  }
-  
-  input[type="checkbox"].check {
-    width: 20px;
-    height: 20px;
-    accent-color: #b57e00;
-  }
-  
-  /* Estilos de cabecera con los botones */
-  .cabecera {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  .cabecera button {
-    margin-left: 10px;
-    padding: 8px 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  #editarBtn {
-    background-color: #3498db;
-    color: white;
-  }
-  #salvarBtn {
-    background-color: #27ae60;
-    color: white;
-  }
-  #salvarBtn:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-  }
-  
+/* style.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #fffafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 50px auto;
+  max-width: 700px;
+  border: 1px solid #f0dce1;
+}
+
+h2, h3, h4 {
+  color: #7c4a6c;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff5f8;
+  color: #444;
+}
+
+select:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: #c38eb4;
+  background-color: #fef4f8;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #d48db1;
+}
+
+.procedimientos-section {
+  background-color: #fceef2;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 1px solid #f5d5de;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#salvar {
+  background-color: #c2e0c6; /* pastel verde */
+  color: #20452f;
+}
+
+#editar {
+  background-color: #ffe4b5; /* pastel amarillo */
+  color: #7a5b1f;
+}
+
+#enviar {
+  background-color: #f8b3c5; /* pastel rosado */
+  color: #611e3f;
+}
+
+#limpiar {
+  background-color: #c9ddf2; /* pastel azul claro */
+  color: #2f4d6e;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#resumen-container {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border: 1px dashed #a3c1dd;
+  border-radius: 8px;
+}
+
+.resumen-box {
+  background-color: #e6f2f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 4px solid #7eaedb;
+  color: #3b5773;
+}

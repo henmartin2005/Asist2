@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Asistencia - Usuario</title>
+  <link rel="stylesheet" href="usuario.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Registro de Procedimientos</h2>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" readonly>
+
+    <label for="doctor">Selecciona un Doctor:</label>
+    <select id="doctor">
+      <option value="">--Seleccionar--</option>
+    </select>
+
+    <div id="procedimientos" class="procedimientos-container"></div>
+
+    <div class="botones">
+      <button id="salvar">Salvar</button>
+      <button id="limpiar">Limpiar</button>
+    </div>
+
+    <h3>Resumen de Selección</h3>
+    <div id="resumen"></div>
+  </div>
+
+  <script src="usuario.js"></script>
+</body>
+</html>
