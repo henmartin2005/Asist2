@@ -19,8 +19,14 @@ const salvarBtn = document.getElementById("salvar");
 const limpiarBtn = document.getElementById("limpiar");
 const resumenContainer = document.getElementById("resumen");
 
+const editarBtn = document.createElement("button");
+editarBtn.textContent = "Editar Último";
+editarBtn.id = "editar";
+document.querySelector(".botones").appendChild(editarBtn);
+
 let currentFecha = "";
 let datosGuardados = {};
+let ultimoDoctorEditado = "";
 
 window.onload = () => {
   const hoy = new Date().toISOString().split("T")[0];
@@ -53,11 +59,25 @@ salvarBtn.addEventListener("click", () => {
   }
 
   datosGuardados[doctor] = seleccionados;
+  ultimoDoctorEditado = doctor;
   guardarEnLocalStorage(currentFecha);
   actualizarResumen();
 
   doctorSelect.value = "";
   procedimientosContainer.innerHTML = "";
+});
+
+editarBtn.addEventListener("click", () => {
+  if (!ultimoDoctorEditado) return alert("Aún no hay procedimiento para editar.");
+  doctorSelect.value = ultimoDoctorEditado;
+  mostrarProcedimientos(ultimoDoctorEditado);
+
+  // Marcar los procedimientos ya guardados para ese doctor
+  const seleccionados = datosGuardados[ultimoDoctorEditado] || [];
+  seleccionados.forEach(proc => {
+    const checkbox = document.querySelector(`input[name="${ultimoDoctorEditado}"][value="${proc}"]`);
+    if (checkbox) checkbox.checked = true;
+  });
 });
 
 limpiarBtn.addEventListener("click", () => {
@@ -92,7 +112,8 @@ function actualizarResumen() {
 
 function guardarEnLocalStorage(fecha) {
   const datos = {
-    procedimientos: datosGuardados
+    procedimientos: datosGuardados,
+    ultimo: ultimoDoctorEditado
   };
   localStorage.setItem(`asistencia-usuario-${fecha}`, JSON.stringify(datos));
 }
@@ -100,5 +121,6 @@ function guardarEnLocalStorage(fecha) {
 function cargarDesdeLocalStorage(fecha) {
   const datos = JSON.parse(localStorage.getItem(`asistencia-usuario-${fecha}`));
   datosGuardados = datos?.procedimientos || {};
+  ultimoDoctorEditado = datos?.ultimo || "";
   actualizarResumen();
 }
